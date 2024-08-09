@@ -7,7 +7,7 @@ resource "aws_instance" "web" {
 
   key_name = "/home/patrick/ansible/aws_key.pub" # SSH Key
 
-  user_data = file(install_python.sh) # ruft das Script zu Python installation auf und führt dieses aus 
+  user_data = file(user_data/install_python.sh) # ruft das Script zu Python installation auf und führt dieses aus 
 
   tags = {
     Name = "Ansible-Prepared-Debian-Instance-${count.index}"
