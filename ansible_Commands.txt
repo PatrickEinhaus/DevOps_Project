@@ -1,0 +1,10 @@
+#Use the hosts.ini file and the group "example", defined in the hosts.ini file. The User ansible is used to auth on the remote servers
+ansible -i hosts.ini example -m ping -u ansible
+
+
+ansible -i hosts.ini example -a "free -h" -u ansible
+
+#Use the palybook.yml file. User ansible is used on remote servers
+ansible-playbook -i hosts.ini playbook-update.yml --ask-become-pass -u patrick -vv >> ~/project/inventory/update.log
+
+ansible-playbook -i hosts.ini playbook-ping.yml --ask-become-pass -u patrick -vv
